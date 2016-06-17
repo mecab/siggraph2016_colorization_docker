@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ~/siggraph2016_colorization
+. ~/torch/install/bin/torch-activate
+th colorize.lua $1 $2
+
