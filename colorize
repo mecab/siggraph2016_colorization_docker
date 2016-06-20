@@ -2,5 +2,12 @@
 
 cd ~/siggraph2016_colorization
 . ~/torch/install/bin/torch-activate
-th colorize.lua $1 $2
 
+if [ "$#" -eq 2 ]; then
+    th colorize.lua $1 $2
+elif [ "$#" -eq 3 ]; then
+    th stylize.lua $1 $2 $3
+else
+    echo "Invalid number of arguments (${#}). Should be 2 or 3" >&2
+    exit 1
+fi
